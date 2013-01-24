@@ -3,3 +3,9 @@ rvm: manages ruby builds. like perlbrew. See ex 0.
 booleans: true and false.
 
 math: defaults to integer math. Append a .0 to use floats instead.
+
+strings:
+	"fmt" % vals is basically sprintf.
+	+ is concat.
+	heredocs <<TOKEN run until /^TOKEN/. A midstring TOKEN will not end the str.
+	
