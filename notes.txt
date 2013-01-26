@@ -8,4 +8,7 @@ strings:
 	"fmt" % vals is basically sprintf.
 	+ is concat.
 	heredocs <<TOKEN run until /^TOKEN/. A midstring TOKEN will not end the str.
-	
+
+loading modules:
+	require ~ Perl's use
+	include ~ Moose's with
