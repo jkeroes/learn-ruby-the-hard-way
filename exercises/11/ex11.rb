@@ -16,7 +16,7 @@ puts "So, you're #{age} years old, #{height} tall and #{weight} heavy."
 #    chomp returns a new string with the newlines removed. The newline can be
 #    changed. See docs.
 
-# Extra Credit 1: Can you find other ways to use gets.chomp? Try some of the
+# Extra Credit 2: Can you find other ways to use gets.chomp? Try some of the
 # samples you find.
 #
 # => STDIN is an I/O stream. Open files also provide an I/O stream. eg
@@ -26,7 +26,7 @@ puts "So, you're #{age} years old, #{height} tall and #{weight} heavy."
 #    handle blocking issues or data without newlines but gets should work in
 #    some cases.
 
-# Extra Credit 1: Write another "form" like this to ask some other questions.
+# Extra Credit 3: Write another "form" like this to ask some other questions.
 #
 print "How ya like me now? "
 amount_liked = gets.chomp()
