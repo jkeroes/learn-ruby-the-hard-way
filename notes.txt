@@ -1,5 +1,15 @@
 rvm: manages ruby builds. like perlbrew. See ex 0.
 
+	# Rebuild docs for new ruby:
+	rvm docs generate
+	gem install rdoc-data
+	rdoc-data --install # Regenerate system docs
+	gem rdoc --all --overwrite # Regenerate all gem docs
+
+
+docs:
+	ri ~ perldoc
+
 booleans: true and false.
 
 math: defaults to integer math. Append a .0 to use floats instead.
@@ -15,3 +25,5 @@ loading modules:
 
 gets
 	gotcha: if ARGV.first is set, then gets, by default, will open it as a file and read from it. Be explicit and use STDIN.gets in this case.
+
+	gotcha: doesn't handle backspace; prints ^? instead. Do I need a term gem?
