@@ -26,4 +26,4 @@ loading modules:
 gets
 	gotcha: if ARGV.first is set, then gets, by default, will open it as a file and read from it. Be explicit and use STDIN.gets in this case.
 
-	gotcha: doesn't handle backspace; prints ^? instead. Do I need a term gem?
+	gotcha: doesn't handle backspace; prints ^? instead. Do I need a readline gem?
