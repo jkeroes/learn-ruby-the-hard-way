@@ -21,3 +21,4 @@ puts "Your third variable is: #{third}"
 # gets more input from a user.
 #
 # => wrote argv-and-gets.rb
+#    Had to cast the input to an Integer to get my idea to work.
