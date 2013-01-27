@@ -1,36 +1,55 @@
 rvm: manages ruby builds. like perlbrew. See ex 0.
 
-	# Rebuild docs for new ruby:
-	rvm docs generate
-	gem install rdoc-data
-	rdoc-data --install # Regenerate system docs
-	gem rdoc --all --overwrite # Regenerate all gem docs
+    # Rebuild docs for new ruby:
+    rvm docs generate
+    gem install rdoc-data
+    rdoc-data --install # Regenerate system docs
+    gem rdoc --all --overwrite # Regenerate all gem docs
 
 
 docs:
-	ri ~ perldoc
+    ri ~ perldoc
 
 booleans: true and false.
 
 math: defaults to integer math. Append a .0 to use floats instead.
 
 strings:
-	"fmt" % vals is basically sprintf.
-	+ is concat.
-	heredocs <<TOKEN run until /^TOKEN/. A midstring TOKEN will not end the str.
+    "fmt" % vals ~ sprintf.
+    + ~ .
+    .chomp
 
 loading modules:
-	require ~ Perl's use
-	include ~ Moose's with
+    require ~ use
+    include ~ with
 
-gets
-	gotcha: if ARGV.first is set, then gets, by default, will open it as a file and read from it. Be explicit and use STDIN.gets in this case.
-
-	gotcha: doesn't handle backspace; prints ^? instead. Do I need a readline gem?
+IO
+    puts()  ~ say
+    print() ~ print
+    gets()  ~ <STDIN>
+        * gotcha: if ARGV.first is set, then gets, by default, will open it as
+          a file and read from it. Be explicit and use STDIN.gets in this
+          case.
+        * gotcha: doesn't handle backspace; prints ^? instead. Do I need a readline gem?
 
 File
-	.close
-	.read         - the full contents of the file
-	.readline     - reads one line of the file.
-	.truncate     - empties the file.
-	.write(stuff) - write stuff to file.
+    .open
+    .close        - flushes pending writes, too
+    .read         - the full contents of the file
+    .readline     - reads one line of the file
+    .truncate     - empties the file
+    .write(stuff) - write stuff to file
+    .seek         - move within file
+
+Heredoc:
+    if the body is indented, use <<-END.
+    if the body is indented and you don't want that text:
+        <<-END.gsub /^\s*/, ''
+    gotcha: a midstring END (ie /\SEND/) will not end the heredoc. It must be /^\s*END/.
+
+Functions:
+    def sum(x, y)
+        x + y
+    end
+
+    def sum(*slurp)
