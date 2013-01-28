@@ -21,6 +21,7 @@ strings:
 
 loading modules:
     require ~ use
+        handy: the ".rb" part of the filename isn't mandatory
     include ~ with
 
 IO
