@@ -36,3 +36,13 @@ start_point = start_point / 10
 
 puts "We can also do that this way:"
 puts "We'd have %s beans, %s jars, and %s crates." % secret_formula(start_point)
+
+# Extra Credit 1: Make sure to do your checks: read it backwards, read it
+# out loud, put comments above confusing parts.
+#
+# ==> sure.
+
+# Extra Credit 2: Break the file on purpose, then run it to see what kinds
+# of errors you get. Make sure you can fix it.
+#
+# ==> done.
