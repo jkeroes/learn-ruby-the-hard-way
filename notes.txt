@@ -53,3 +53,6 @@ Functions:
     end
 
     def sum(*slurp)
+
+q*
+    %w(do re mi fa) ~ qw/do re mi fa/
