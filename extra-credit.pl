@@ -30,8 +30,11 @@ my $res = $extra_credit->scrape($uri);
 # If extra credit exercises were found, reformat them.
 # Open the URL in a browser otherwise.
 if (exists $res->{ex}) {
+    my $num = 1;
     for (@{ $res->{ex} }) {
-        print wrap('# ', '# ', $_), "\n\#\n\# ==> \n\n";
+        print wrap("# Extra Credit $num: ", '# ', $_);
+        print "\n\#\n\# ==> \n\n";
+        ++$num;
     }
 }
 else {
