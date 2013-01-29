@@ -35,6 +35,23 @@ END
 
   if insanity == "1" or insanity == "2"
     puts "Your body survives powered by a mind of jello. Good job!"
+  elsif insanity == "liar"
+    puts <<END
+The truth shall set you free.
+1. Why am I here?
+2. You're just a figment of my imagination
+END
+
+    prompt; lies = gets.chomp
+
+    if lies == "1"
+      puts "Where else could you possibly be. Good job!"
+    elsif lies == "2"
+      puts "No escape from reality. Good job!"
+    else
+      puts "Easy come, easy go; good job."
+    end
+
   else
     puts "The insanity rots your eyes into a pool of muck. Good job!"
   end
@@ -42,3 +59,8 @@ END
 else
   puts "You stumble around and fall on a knife and die. Good job!"
 end
+
+# Extra Credit #1: Make new parts of the game and change what decisions people can make. Expand the game out as much as
+# you can before it gets ridiculous.
+#
+# ==> done.
