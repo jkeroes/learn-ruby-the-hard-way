@@ -65,4 +65,6 @@ arrays
     .first or a[0]
     .last  or a[-1]
     .size == .length == last index + 1
-    
+
+scope
+    global var - makes var accessible inside defs.
