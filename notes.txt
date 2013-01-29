@@ -55,5 +55,13 @@ Functions:
 
     def sum(*slurp)
 
+    gotcha: must be defined before use.
+
 q*
-    %w(do re mi fa) ~ qw/do re mi fa/
+    %w(do re mi fa) ~ qw/do re mi fa/ (quote with '')
+    %W(foo bar)                       (quote with ""; #{} works inside.)
+
+arrays
+    .first or a[0]
+    .last  or a[-1]
+    
