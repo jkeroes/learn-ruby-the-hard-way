@@ -1,6 +1,7 @@
 # prints a prompt
 def prompt()
   print "> "
+  gets.chomp
 end
 
 # From http://railsforum.com/viewtopic.php?id=19081
@@ -13,7 +14,7 @@ end
 def gold_room()
   puts "This room is full of gold. How much do you take?"
 
-  prompt; next_move = gets.chomp
+  next_move = prompt
 
   if numeric?(next_move)
     how_much = next_move.to_i()
@@ -41,7 +42,7 @@ END
   bear_moved = false
 
   while true
-    prompt; next_move = gets.chomp
+    next_move = prompt
 
     if next_move == "take honey"
       dead("The bear looks at you and then slaps your face off.")
@@ -66,7 +67,7 @@ He, it, or whatever stares at you and you go insane.
 Do you flee for your life or eat your head?
 END
 
-  prompt; next_move = gets.chomp
+  next_move = prompt
 
   if next_move.include? "flee"
     start()
@@ -92,7 +93,7 @@ There is a door to your right and left.
 Which one do you take?
 END
 
-  prompt; next_move = gets.chomp
+  next_move = prompt
 
   if next_move == "left"
     bear_room()
@@ -137,11 +138,11 @@ start()
 # Extra Credit 4: Add more to the game. What can you do to both simplify
 # and expand it.
 #
-# ==>
+# ==> There's a bug in... oh, they mention it below.
 
 # Extra Credit 5: The gold_room has a weird way of getting you to type a
 # number. What are all the bugs in this way of doing it? Can you make it
 # better than just checking if "1" or "0" are in the number? Look at how
 # to_i() works for clues.
 #
-# ==>
+# ==> Fixed the bug. Any number < 50 is now acceptable.
