@@ -1,25 +1,35 @@
+# prints a prompt
 def prompt()
   print "> "
 end
 
+# From http://railsforum.com/viewtopic.php?id=19081
+#
+def numeric?(object)
+  true if Float(object) rescue false
+end
+
+# Describes the gold room, parses user input, and changes to next state.
 def gold_room()
   puts "This room is full of gold. How much do you take?"
 
   prompt; next_move = gets.chomp
-  if next_move.include? "0" or next_move.include? "1"
+
+  if numeric?(next_move)
     how_much = next_move.to_i()
   else
     dead("Man, learn to type a number.")
   end
 
   if how_much < 50
-    puts "Nice, you're not greedy, you win!"
+    puts "Nice, you're not greedy. You win!"
     Process.exit(0)
   else
     dead("You greedy bastard")
   end
 end
 
+# Describes the bear room, parses user input, and changes to next state.
 def bear_room()
   puts <<END
 There is a bear here.
@@ -48,6 +58,7 @@ END
   end
 end
 
+# Describes the cthulu room, parses user input, and changes to next state.
 def cthulu_room()
   puts <<END
 Here you see the great evil Cthulhu.
@@ -66,11 +77,14 @@ END
   end
 end
 
+# Accepts a string.
+# Prints the string with " Good job!" appended to it and quits.
 def dead(why)
   puts "#{why} Good job!"
   Process.exit(0)
 end
 
+# Describes the start room, parses user input, and changes to next state.
 def start()
   puts <<END
 You are in a dark room.
@@ -91,3 +105,43 @@ end
 
 start()
 
+# Extra Credit 1: Draw a map of the game and how you flow through it.
+#
+# ==> graph-easy --as=boxart dungeon.in
+#
+#     flee                                       unknown input
+# ┌──────────────┐                             ┌───────────────┐
+# │              ∨                             ∨               │
+# │            ┌───────────────────┐  left   ┌───────────────────┐  taunt bear   ┌─────────────────────┐  open door   ┌───────────┐  number less than 50 including a 0 or 1   ┌─────┐
+# │    ┌────── │       start       │ ──────> │     bear room     │ ────────────> │ bear room/open door │ ───────────> │ gold room │ ────────────────────────────────────────> │ win │
+# │    │       └───────────────────┘         └───────────────────┘               └─────────────────────┘              └───────────┘                                           └─────┘
+# │    │           unknown input               │                                   │                                    │
+# │    │ right   ┌───────────────┐             │ take honey                        │                                    │
+# │    │         ∨               │             ∨                                   │                                    │
+# │    │       ┌───────────────────┐  head   ┌───────────────────┐  taunt bear     │                                    │
+# │    └─────> │    cthulu room    │ ──────> │                   │ <───────────────┘                                    │
+# │            └───────────────────┘         │       dead        │                                                      │
+# │              │                           │                   │  else                                                │
+# └──────────────┘                           │                   │ <────────────────────────────────────────────────────┘
+#                                            └───────────────────┘
+
+# Extra Credit 2: Fix all of your mistakes, including spelling mistakes.
+#
+# ==> done.
+
+# Extra Credit 3: Write comments for the functions you do not understand.
+# Remember RDoc comments?
+#
+# ==> no need.
+
+# Extra Credit 4: Add more to the game. What can you do to both simplify
+# and expand it.
+#
+# ==>
+
+# Extra Credit 5: The gold_room has a weird way of getting you to type a
+# number. What are all the bugs in this way of doing it? Can you make it
+# better than just checking if "1" or "0" are in the number? Look at how
+# to_i() works for clues.
+#
+# ==>
