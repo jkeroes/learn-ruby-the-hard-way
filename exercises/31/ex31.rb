@@ -64,3 +64,16 @@ end
 # you can before it gets ridiculous.
 #
 # ==> done.
+#
+# You enter a dark room with two doors. Do you go throught door #1 or door #2?
+# > 2
+# You stare into the endless abyss at Cthulu's retina.
+# 1. Blueberries
+# 2. Yellow jacket clothespins.
+# 3. Understanding revolvers yelling melodies.
+# > liar
+# The truth shall set you free.
+# 1. Why am I here?
+# 2. You're just a figment of my imagination
+# > I just killed a man.
+# Easy come, easy go; good job.
