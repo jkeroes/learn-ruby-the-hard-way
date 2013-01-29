@@ -1,26 +1,15 @@
 def incr_to_array(max, skip=1)
-  i = 0
   numbers = []
+  last = max/skip
 
-  # should assert or throw.
-  if max < i
-    puts "loop() must be called with a positive int argument"
-    return numbers
-  end
-
-  while i < max
-    puts "At the top i is #{i}"
-    numbers.push(i)
-
-    i = i + skip
-    puts "Numbers now: #{numbers}"
-    puts "At the bottom i is #{i}"
+  for i in 0..last
+    numbers.push(i * skip)
   end
 
   numbers
 end
 
-numbers = incr_to_array(4, 2)
+numbers = incr_to_array(6, 2.3)
 
 puts "The numbers: "
 
@@ -54,5 +43,4 @@ end
 # need the incrementor in the middle anymore? What happens if you do not
 # get rid of it?
 #
-# ==> 
-
+# ==> done. The incrementor is not needed.
